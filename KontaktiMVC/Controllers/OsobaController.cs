@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KontaktiMVC;
+using PagedList;
 
 namespace KontaktiMVC.Controllers
 {
@@ -15,8 +16,19 @@ namespace KontaktiMVC.Controllers
         private KontaktiEntities db = new KontaktiEntities();
 
         // GET: Osoba
-        public ActionResult Index(string searchString)
+        public ViewResult Index(string currentFilter, string searchString, int? page)
         {
+            if (searchString!=null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.currentFilter = searchString;
+
             var listaOsoba = from o in db.Osoba
                              select o;
 
@@ -35,7 +47,10 @@ namespace KontaktiMVC.Controllers
                 listaOsoba = listaOsoba.Where(l => l.ime.Contains(searchString) || l.prezime.Contains(searchString));
             }
 
-            return View(listaOsoba.ToList());
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            listaOsoba = listaOsoba.OrderBy(l => l.prezime);
+            return View(listaOsoba.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Osoba/Details/5
