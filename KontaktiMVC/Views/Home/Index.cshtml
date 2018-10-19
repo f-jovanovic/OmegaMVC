@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Popis kontakata";
+}
+
+<style>
+    .row {
+        overflow: hidden;
+        font-family: 'Segoe UI';
+        padding: 20px;
+        color: black;
+    }
+
+    .webGrid {
+        margin: 4px;
+        border-collapse: collapse;
+    }
+
+        .webGrid td {
+            border: 0.5px groove black;
+            padding: 5px;
+        }
+
+        .webGrid th {
+            text-align: center;
+        }
+</style>
+<div class="row">
+    <p>
+        Pretraži prema imenu ili broju: <input id="TextPretraga" type="text" onkeyup="pretraga()" placeholder="Pretraži..." />
+    </p>
+</div>
