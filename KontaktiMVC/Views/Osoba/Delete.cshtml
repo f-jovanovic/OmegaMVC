@@ -4,15 +4,20 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Brisanje kontakta</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Jeste li sigurni?</h3>
 <div>
-    <h4>Osoba</h4>
+    <h4>Kontakt</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt> </dt>
+        <dd>
+            <img src="@Url.Content(Model.slika)" alt="Slika nedostupna" />
+        </dd>
+
         <dt>
-            @Html.DisplayNameFor(model => model.ime)
+            Ime
         </dt>
 
         <dd>
@@ -20,7 +25,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.prezime)
+            Prezime
         </dt>
 
         <dd>
@@ -28,7 +33,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.grad)
+            Grad
         </dt>
 
         <dd>
@@ -36,19 +41,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.opis)
+            Opis
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.opis)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.slika)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.slika)
         </dd>
 
     </dl>
@@ -57,8 +54,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Izbriši" class="btn btn-default" /> |
+            @Html.ActionLink("Povratak", "Index")
         </div>
     }
 </div>

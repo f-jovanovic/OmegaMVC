@@ -160,6 +160,7 @@
       <DependentUpon>KontaktiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\OsobaEdit.cs" />
+    <Compile Include="Controllers\BrojController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OsobaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -248,6 +249,11 @@
     <Content Include="Views\Osoba\Details.cshtml" />
     <Content Include="Views\Osoba\Edit.cshtml" />
     <Content Include="Views\Osoba\Index.cshtml" />
+    <Content Include="Views\Broj\Create.cshtml" />
+    <Content Include="Views\Broj\Delete.cshtml" />
+    <Content Include="Views\Broj\Details.cshtml" />
+    <Content Include="Views\Broj\Edit.cshtml" />
+    <Content Include="Views\Broj\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

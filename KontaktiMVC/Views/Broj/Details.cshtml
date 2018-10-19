@@ -1,0 +1,42 @@
+﻿@model KontaktiMVC.Broj
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Broj</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Osoba.ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Osoba.ime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.broj1 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

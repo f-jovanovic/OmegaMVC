@@ -4,17 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Detalji o kontaktu</h2>
+<h2>Podaci o kontaktu</h2>
 
 <div>
     <hr />
 
-
-
     <dl class="dl-horizontal">
-        <dt>
-
-        </dt>
+        <dt> </dt>
         <dd>
             <img src="@Url.Content(Model.slika)" alt="Slika nedostupna" />
         </dd>
@@ -54,6 +50,7 @@
             Telefonski brojevi
         </dt>
         <dd>
+            <p>@Html.ActionLink("Dodaj broj" , "Create", "Broj",null,null)</p>
             <table class="table">
                 <tr>
                     <th>Broj</th>
@@ -74,16 +71,18 @@
                             @Html.DisplayFor(modelItem => item.opis)
                         </td>
                         <td>
-
+                            @Html.ActionLink("Uredi","Edit","Broj", new { id = item.broj1 }, null) | 
+                            @Html.ActionLink("Izbriši", "Delete", "Broj", new {id = item.broj1}, null)
                         </td>
                     </tr>
                 }
             </table>
         </dd>
 
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Povratak", "Index")
 </p>
