@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Classes\OsobaEdit.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OsobaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,6 +243,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Osoba\Create.cshtml" />
+    <Content Include="Views\Osoba\Delete.cshtml" />
+    <Content Include="Views\Osoba\Details.cshtml" />
+    <Content Include="Views\Osoba\Edit.cshtml" />
+    <Content Include="Views\Osoba\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
