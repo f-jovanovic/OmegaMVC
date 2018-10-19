@@ -32,8 +32,7 @@ namespace KontaktiMVC.Controllers
             
             if (!string.IsNullOrEmpty(searchString))
             {
-                listaOsoba = listaOsoba.Where(l => l.ime.Contains(searchString) || l.prezime.Contains(searchString)
-                /*|| l.BrojeviText.Contains(searchString)*/);
+                listaOsoba = listaOsoba.Where(l => l.ime.Contains(searchString) || l.prezime.Contains(searchString));
             }
 
             return View(listaOsoba.ToList());
