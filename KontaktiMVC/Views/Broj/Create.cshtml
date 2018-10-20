@@ -17,7 +17,7 @@
         <div class="form-group">
             <div class="control-label col-md-2">Telefonski broj</div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.broj1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.broj1, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
                 @Html.ValidationMessageFor(model => model.broj1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
             <div class="control-label col-md-2">Tip</div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.tip, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.tip, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
                 @Html.ValidationMessageFor(model => model.tip, "", new { @class = "text-danger" })
             </div>
         </div>

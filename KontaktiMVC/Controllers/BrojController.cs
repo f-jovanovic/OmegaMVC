@@ -14,28 +14,6 @@ namespace KontaktiMVC.Controllers
     {
         private KontaktiEntities db = new KontaktiEntities();
 
-        // GET: Broj
-        public ActionResult Index()
-        {
-            var broj = db.Broj.Include(b => b.Osoba);
-            return View(broj.ToList());
-        }
-
-        // GET: Broj/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Broj broj = db.Broj.Find(id);
-            if (broj == null)
-            {
-                return HttpNotFound();
-            }
-            return View(broj);
-        }
-
         // GET: Broj/Create
         public ActionResult Create()
         {
@@ -54,7 +32,7 @@ namespace KontaktiMVC.Controllers
             {
                 db.Broj.Add(broj);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Osoba");
             }
 
             ViewBag.id_osoba = new SelectList(db.Osoba, "id", "ime", broj.id_osoba);
@@ -88,7 +66,7 @@ namespace KontaktiMVC.Controllers
             {
                 db.Entry(broj).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Osoba");
             }
             ViewBag.id_osoba = new SelectList(db.Osoba, "id", "ime", broj.id_osoba);
             return View(broj);

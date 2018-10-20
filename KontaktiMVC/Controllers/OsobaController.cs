@@ -44,7 +44,9 @@ namespace KontaktiMVC.Controllers
             
             if (!string.IsNullOrEmpty(searchString))
             {
-                listaOsoba = listaOsoba.Where(l => l.ime.Contains(searchString) || l.prezime.Contains(searchString));
+                var list = listaOsoba.ToList().Where(l => l.ime.Contains(searchString) || l.prezime.Contains(searchString) ||
+                                             l.BrojeviText.Contains(searchString));
+                listaOsoba = list.AsQueryable();
             }
 
             int pageSize = 8;
